@@ -1,6 +1,7 @@
 import { useContext, useEffect, useMemo, useState } from 'react';
 import { PlayersContext } from '../../contexts/PlayersContext';
 import Player from './Player';
+import banner from './banner.jpeg';
 import './Players.css';
 
 const Players = () => {
@@ -28,12 +29,15 @@ const Players = () => {
   }
 
   return (
-    <div className="playersPage">
-      <input type="text" name="search" placeholder="Search.." onChange={onChange} />
-      <div className="container">
-        {filteredPlayers?.map(player => <Player player={player} key={player.jerseyNumber} />)}
+    <>
+      <img className="playersbanner" src={banner} alt="" />
+      <div className="playersPage">
+        <input type="text" name="search" placeholder="Search.." onChange={onChange} />
+        <div className="container">
+          {filteredPlayers?.map(player => <Player player={player} key={player.jerseyNumber} />)}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
