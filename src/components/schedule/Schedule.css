@@ -1,0 +1,16 @@
+.schedule {
+  display: flex;
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.games-event {
+  display: flex;
+  height: 100px;
+}
+
+.dateContainer {
+  background-color: #CCC;
+  color: black;
+}

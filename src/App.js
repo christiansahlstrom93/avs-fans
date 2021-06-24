@@ -1,24 +1,32 @@
-import logo from './logo.svg';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import {PlayersContextProvider} from './contexts/PlayersContext'
+import { PlayerDetailsContextProvider } from './contexts/PlayerDetailsContext';
+import Players from './components/players/Players'
+import PlayerDetails from './components/players/PlayerDetails';
+import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
+import { index,playerDetails } from './routes';
+import Schedule from './components/schedule/Schedule';
+import { ScheduleContextProvider } from './contexts/ScheduleContext';
 import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <PlayersContextProvider>
+      <PlayerDetailsContextProvider>
+        <ScheduleContextProvider>
+          <Header />
+          <Schedule />
+          <BrowserRouter basename="/">
+            <Switch>
+              <Route exact path={index} component={Players} />
+              <Route exact path={playerDetails} component={PlayerDetails} />
+            </Switch>
+          </BrowserRouter>
+          <Footer />
+        </ScheduleContextProvider>
+      </PlayerDetailsContextProvider>
+    </PlayersContextProvider>
   );
 }
 

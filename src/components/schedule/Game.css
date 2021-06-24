@@ -1,0 +1,74 @@
+.gameContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #EEE;
+  padding: 12px;
+  width: 150px;
+}
+
+.gameContainerFinished {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #DDD;
+  padding: 12px;
+  width: 150px;
+  opacity: .5;
+  background-color: #EEE;
+}
+
+.summary {
+  position: absolute;
+  top: 2px;
+  display: flex;
+  width: 100%;
+  font-size: 11px;
+  color: #999;
+  font-weight: bold;
+  text-transform: uppercase;
+  justify-content: space-around;
+}
+
+.gameDate {
+  display: flex;
+  width: 80%;
+  flex: 1;
+  padding: 0 12px;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: bold;
+  color: #555;
+  align-items: center;
+}
+
+.teamSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  padding: 2px 0;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.gameWrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.gameBox {
+  width: 100%;
+}
+
+.team-logo {
+  width: 20px;
+  height: 20px;
+}
