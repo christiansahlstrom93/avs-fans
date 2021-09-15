@@ -8,13 +8,13 @@ const Schedule = () => {
 
   useEffect(() => {
     const startDate = new Date();
-    startDate.setHours(startDate.getHours() - (489));
+    startDate.setHours(startDate.getHours() - (72));
     const endDate = new Date();
-    endDate.setHours(endDate.getHours() + 72);
+    endDate.setHours(endDate.getHours() + 702);
     fetchSchedule(startDate.toISOString().split('T')[0], endDate.toISOString().split('T')[0]);
   }, [fetchSchedule]);
 
-  if (loading) {
+  if (loading || !data) {
     return null;
   }
 

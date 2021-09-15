@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { useParams, useHistory } from "react-router-dom";
 import { PlayerDetailsContext } from '../../contexts/PlayerDetailsContext';
-import {BASE_HEADSHOT_URL, BASE_ACTION_SHOT} from '../../contants'
+import {BASE_HEADSHOT_URL, BASE_ACTION_SHOT, HEADSHOT_DEFAULT, JUMBOTRON_DEFAULT} from '../../contants'
 import './PlayerDetails.css';
 import backButton from './backButton.png';
 
@@ -10,9 +10,11 @@ const PlayerDetails = () => {
   let { id } = useParams();
   const history = useHistory();
   const [jumbotron, setJumbotronSrc] = useState(`${BASE_ACTION_SHOT}${id}.jpg`);
+  const [headshot, setHeadshot] = useState(`${BASE_HEADSHOT_URL}${id}.jpg`);
+
   const onNavigate = () => history.replace('/');
 
-  const onError = () => setJumbotronSrc('https://cms.nhl.bamgrid.com/images/arena/default/21.jpg')
+  const onError = (func, fallbackSrc) => () => func(fallbackSrc)
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -31,16 +33,16 @@ const PlayerDetails = () => {
   return (
     <div className="playerDetailsContainer">
       <div className="imageContainer">
-        <img onError={onError} className="jumbrotron" src={jumbotron} alt="" />
-        <img className="headshot-details" alt="player" src={`${BASE_HEADSHOT_URL}${id}.jpg`} />
+        <img onError={onError(setJumbotronSrc, JUMBOTRON_DEFAULT)} className="jumbrotron" src={jumbotron} alt="" />
+        <img onError={onError(setHeadshot, HEADSHOT_DEFAULT)} className="headshot-details" alt="player" src={headshot} />
       </div>
       <img className="backButton" onClick={onNavigate} src={backButton} alt="" />
       <div className="playerContent">
         <div className="subContent">
-          <div className="name">{`${data.fullName} | #${data.primaryNumber}`}</div>
+          <div className="name">{`${data.fullName} | #${data.primaryNumber ?? ' N/A'}`}</div>
         </div>
         <div className="subContent">
-          <div className="additionalInfo">{`${data.primaryPosition.abbreviation} | ${data.height} | ${data.weight} lb | Age ${data.currentAge}`}</div>
+          <div className="additionalInfo">{`${data.primaryPosition.abbreviation} | ${data.height ?? '-'} | ${`${data.weight ?? 'N/A'} lb`}| Age ${data.currentAge}`}</div>
         </div>
       </div>
     </div>

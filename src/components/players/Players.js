@@ -9,11 +9,10 @@ const Players = () => {
   const [searchFilter, setSearchFilter] = useState('');
 
   const filteredPlayers = useMemo(() => {
-    return data?.filter(player => {
-      return player.jerseyNumber.toLowerCase().includes(searchFilter) ||
+    return data?.filter(player => player.jerseyNumber?.toLowerCase().includes(searchFilter) ||
         player.person.fullName.toLowerCase().includes(searchFilter) ||
         player.position.abbreviation.toLowerCase().includes(searchFilter)
-    })
+    )
   }, [searchFilter, data]) 
 
   const onChange = (ev) => {
@@ -24,7 +23,7 @@ const Players = () => {
     fetchPlayers();
   }, [fetchPlayers]);
 
-  if (loading ||  !data) {
+  if (loading || !data) {
     return null;
   }
 
@@ -34,7 +33,7 @@ const Players = () => {
       <div className="playersPage">
         <input type="text" name="search" placeholder="Search.." onChange={onChange} />
         <div className="container">
-          {filteredPlayers?.map(player => <Player player={player} key={player.jerseyNumber} />)}
+          {filteredPlayers?.map(player => <Player player={player} key={player.person.id} />)}
         </div>
       </div>
     </>
