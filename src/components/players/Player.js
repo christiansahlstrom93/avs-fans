@@ -6,7 +6,7 @@ import './Player.css';
 
 const Player = ({ player }) => {
   const history = useHistory();
-  const onNavigate = () => history.replace(`/player/${player.person.id}`);
+  const onNavigate = () => history.push(`/player/${player.person.id}`);
   const [headshot, setHeadshot] = useState(`${BASE_HEADSHOT_URL}${player.person.id}.jpg`);
   const onError = () => setHeadshot(HEADSHOT_DEFAULT)
 

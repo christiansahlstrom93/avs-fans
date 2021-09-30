@@ -1,0 +1,19 @@
+.tableContainer {
+  padding: 0 18px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #EEE;
+  text-align: left;
+  padding: 12px 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #EEE;
+}

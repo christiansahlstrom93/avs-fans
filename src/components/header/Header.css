@@ -17,3 +17,13 @@
   font-weight: bold;
   margin-left: 12px;
 }
+
+@media only screen and (max-width: 600px) {
+  .header {
+    justify-content: center;
+  }
+
+  .link {
+    display: none;
+  }
+}
