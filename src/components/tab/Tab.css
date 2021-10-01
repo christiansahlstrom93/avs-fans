@@ -1,0 +1,14 @@
+.tab {
+  cursor: pointer;
+  margin: 2px 2px;
+  border: 1px solid #CCC;
+  padding: 8px;
+}
+
+.tabActive {
+  cursor: pointer;
+  margin: 2px 2px;
+  border: 1px solid #CCC;
+  padding: 8px;
+  background-color: #EEE;
+}

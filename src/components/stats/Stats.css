@@ -17,3 +17,10 @@ td, th {
 tr:nth-child(even) {
   background-color: #EEE;
 }
+
+.statsFilter {
+  padding: 8px 18px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

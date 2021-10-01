@@ -45,7 +45,7 @@ const PlayerDetails = () => {
         </div>
       </div>
       <div className="divider" />
-      <Stats statistics={data.stats} leagueId={133} />
+      <Stats statistics={data.stats} />
     </div>
   );
 };
