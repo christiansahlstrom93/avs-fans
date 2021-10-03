@@ -1,9 +1,7 @@
 .playerContainer {
-  padding: 18px;
-  box-shadow: 0 0 1px 1px #EEE;
+  padding: 8px 18px;
   border-radius: 4px;
   width: 400px;
-  min-height: 200px;
   margin: 12px;
   cursor: pointer;
 }
@@ -25,7 +23,7 @@
   height: 90px;
   width: 90px;
   border-radius: 50%;
-  box-shadow: 0 0 1px 1px #DDD;
+  box-shadow: 0 0 1px 1px #EEE;
 }
 
 .logoWrapper {
@@ -39,28 +37,22 @@
   padding: 0 18px;
 }
 
-.name {
-  font-size: 16px;
+.playerInfoShort {
+  padding: 4px 0;
+  font-size: 12px;
+  font-weight: bold;
   cursor: pointer;
   color: black;
   text-decoration: none;
 }
 
-.number {
-  font-size: 18px;
-  flex: 0;
-  font-weight: bold;
-}
-
 .pos {
   display: flex;
-  font-size: 14px;
-  font-weight: bold;
+  font-size: 12px;
 }
 
 @media only screen and (max-width: 600px) {
   .playerContainer {
     width: 100%;
-    min-height: 150px;
   }
 }

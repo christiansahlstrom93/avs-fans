@@ -38,7 +38,7 @@ const PlayerDetails = () => {
       <img className="backButton" onClick={onNavigate} src={backButton} alt="" />
       <div className="playerContent">
         <div className="subContent">
-          <div className="name">{`${data.fullName} | #${data.primaryNumber ?? ' N/A'} | ${data.birthCountry ?? 'N/A'}`}</div>
+          <div className="fullName">{`${data.fullName} | #${data.primaryNumber ?? ' N/A'} | ${data.birthCountry ?? 'N/A'}`}</div>
         </div>
         <div className="subContent">
           <div className="additionalInfo">{`${data.primaryPosition.abbreviation} | ${data.height ?? '-'} | ${`${data.weight ?? 'N/A'} lb`}| Age ${data.currentAge}`}</div>

@@ -8,7 +8,7 @@
 }
 
 input[type=text] {
-  width: 130px;
+  width: 436px;
   box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -21,10 +21,6 @@ input[type=text] {
   transition: width 0.4s ease-in-out;
 }
 
-input[type=text]:focus {
-  width: 436px;
-}
-
 .container {
   display: flex;
   justify-content: flex-start;
@@ -33,9 +29,22 @@ input[type=text]:focus {
 
 
 @media only screen and (max-width: 600px) {
+  input[type=text] {
+    width: calc(100% - 24px);
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: white;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 12px;
+    margin-left: 12px;
+    transition: width 0.4s ease-in-out;
+  }
+
   .playerContainer {
     width: 100%;
-    min-height: 150px;
   }
 
   input[type=text]:focus {

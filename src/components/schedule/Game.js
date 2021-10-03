@@ -1,6 +1,8 @@
+import React, { useEffect, useRef } from 'react';
 import './Game.css';
 
-const Game = ({ game }) => {  
+const Game = ({ game, shouldScroll }) => {
+  const ref = useRef(null);
   const summary = () => {
     if (!game?.seriesSummary?.seriesStatusShort) {
       return null;
@@ -16,10 +18,16 @@ const Game = ({ game }) => {
       </div>
     );
   }
+
+  useEffect(() => {
+    if (shouldScroll && ref) {
+      ref.current.scrollIntoView({ behavior: 'smooth', inline: 'center' })
+    }
+  }, [ref, shouldScroll, game]);
   
   return (
     <>
-    <div className={game.status.detailedState.toLowerCase() === 'final' ? 'gameContainerFinished' : 'gameContainer'}>
+    <div id={game.id} ref={ref} className={game.status.detailedState.toLowerCase() === 'final' ? 'gameContainerFinished' : 'gameContainer'}>
       {summary()}
       <div className="gameWrapper">
         <div className="gameBox">

@@ -18,12 +18,17 @@ const Schedule = () => {
     return null;
   }
 
+  const firstLive = data.map(event => event.games
+    .find(game => game.status.detailedState.toLowerCase() === 'scheduled'))
+    .filter(foundGames => !!foundGames)[0];
+
   return (
     <div className="schedule">
       {data?.map((event, index) => {
         return (
           <div key={index} className="games-event">
-            {event.games.map((game, idx) => <Game game={game} key={idx} />)}
+            {event.games.map((game, idx) => <Game shouldScroll={game.gamePk === firstLive.gamePk} game={game} key={idx} />
+            )}
           </div>
         );
       })}

@@ -19,9 +19,7 @@ const Player = ({ player }) => {
         <img onError={onError} className="headshot" alt="player" src={headshot} />
       </div>
         <div className="textContainer">
-          <div className="number">#{player.jerseyNumber}</div>
-          <div className="name">{player.person.fullName}</div>
-          <div className="pos">{player.position.abbreviation}</div>
+          <div className="playerInfoShort">{`${player.person.fullName} #${player.jerseyNumber} ${player.position.abbreviation}`}</div>
         </div>
     </div>
     <div className="testimonial-small">
