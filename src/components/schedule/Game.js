@@ -21,7 +21,7 @@ const Game = ({ game, shouldScroll }) => {
 
   useEffect(() => {
     if (shouldScroll && ref) {
-      ref.current.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'start' })
+      ref.current.scrollIntoView({ behavior: 'smooth', inline: 'end', block: 'end' })
     }
   }, [ref, shouldScroll, game]);
   

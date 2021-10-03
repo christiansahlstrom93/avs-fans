@@ -30,7 +30,7 @@ input[type=text] {
 
 @media only screen and (max-width: 600px) {
   input[type=text] {
-    width: calc(100% - 24px);
+    width: calc(100% - 12px);
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -39,7 +39,7 @@ input[type=text] {
     background-position: 10px 10px; 
     background-repeat: no-repeat;
     padding: 12px 20px 12px 12px;
-    margin-left: 12px;
+    margin-left: 4px;
     transition: width 0.4s ease-in-out;
   }
 

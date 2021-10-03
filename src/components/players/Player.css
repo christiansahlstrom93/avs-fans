@@ -1,6 +1,5 @@
 .playerContainer {
   padding: 8px 4px;
-  border-radius: 4px;
   width: 400px;
   margin: 12px 0;
   cursor: pointer;
@@ -54,5 +53,13 @@
 @media only screen and (max-width: 600px) {
   .playerContainer {
     width: 100%;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .playerContainer {
+    border-bottom: 1px solid #EEE;
+    min-height: 150px;
+    padding: 24px 12px;
   }
 }
