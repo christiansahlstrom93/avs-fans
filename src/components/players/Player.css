@@ -1,8 +1,8 @@
 .playerContainer {
-  padding: 8px 18px;
+  padding: 8px 4px;
   border-radius: 4px;
   width: 400px;
-  margin: 12px;
+  margin: 12px 0;
   cursor: pointer;
 }
 
@@ -13,7 +13,7 @@
 .testimonial-small {
   display: flex;
   flex: 1;
-  padding: 12px 4px;
+  padding: 12px 12px;
   font-size: 12px;
   font-style: italic;
   white-space: pre-wrap;

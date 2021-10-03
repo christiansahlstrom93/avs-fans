@@ -18,13 +18,15 @@ const Player = ({ player }) => {
       <div className="logoWrapper">
         <img onError={onError} className="headshot" alt="player" src={headshot} />
       </div>
+      <div>
         <div className="textContainer">
-          <div className="playerInfoShort">{`${player.person.fullName} #${player.jerseyNumber} ${player.position.abbreviation}`}</div>
+          <div className="playerInfoShort">{`#${player.jerseyNumber} ${player.person.fullName} ${player.position.abbreviation}`}</div>
+        </div>
+        <div className="testimonial-small">
+          {testimonial ? `"${testimonial}"` : ''}
+        </div>
         </div>
     </div>
-    <div className="testimonial-small">
-         {testimonial ? `"${testimonial}"` : ''}
-      </div>
     </div>
   );
 };
