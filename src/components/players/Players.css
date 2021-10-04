@@ -40,6 +40,7 @@ input[type=text] {
     background-repeat: no-repeat;
     padding: 12px 20px 12px 12px;
     margin-left: 4px;
+    margin-bottom: 18px;
     transition: width 0.4s ease-in-out;
   }
 

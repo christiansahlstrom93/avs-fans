@@ -53,6 +53,9 @@
 @media only screen and (max-width: 600px) {
   .playerContainer {
     width: 100%;
+    border-bottom: 1px solid #EEE;
+    padding: 12px;
+    margin: 0;
   }
 }
 

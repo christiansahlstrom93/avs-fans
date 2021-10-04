@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import {BASE_HEADSHOT_URL, HEADSHOT_DEFAULT} from '../../contants'
-import testimonials from './testimonials.json';
+// import testimonials from './testimonials.json';
 import { useHistory } from 'react-router-dom';
 import './Player.css';
 
@@ -10,7 +10,7 @@ const Player = ({ player }) => {
   const [headshot, setHeadshot] = useState(`${BASE_HEADSHOT_URL}${player.person.id}.jpg`);
   const onError = () => setHeadshot(HEADSHOT_DEFAULT)
 
-  const testimonial = testimonials[player.person.id]?.testimonial;
+  // const testimonial = testimonials[player.person.id]?.testimonial;
   
   return (
     <div className="playerContainer" onClick={onNavigate}>
@@ -22,9 +22,7 @@ const Player = ({ player }) => {
         <div className="textContainer">
           <div className="playerInfoShort">{`#${player.jerseyNumber} ${player.person.fullName} ${player.position.abbreviation}`}</div>
         </div>
-        <div className="testimonial-small">
-          {testimonial ? `"${testimonial}"` : ''}
-        </div>
+  
         </div>
     </div>
     </div>
