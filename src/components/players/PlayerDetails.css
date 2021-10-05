@@ -51,7 +51,14 @@
 }
 
 .additionalInfo {
+  display: flex;
   margin-top: 12px;
+  align-items: center;
+}
+
+.logo-team-small {
+  width: 24px;
+  margin: 0 4px 0 0;
 }
 
 .divider {

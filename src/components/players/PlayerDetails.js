@@ -29,6 +29,8 @@ const PlayerDetails = () => {
     return null;
   }
 
+  console.log(data)
+
   return (
     <div className="playerDetailsContainer">
       <div className="imageContainer">
@@ -42,6 +44,12 @@ const PlayerDetails = () => {
         </div>
         <div className="subContent">
           <div className="additionalInfo">{`${data.primaryPosition.abbreviation} | ${data.height ?? '-'} | ${`${data.weight ?? 'N/A'} lb`}| Age ${data.currentAge}`}</div>
+        </div>
+        <div className="subContent">
+          <div className="additionalInfo">
+            <img className="logo-team-small" src={`/team-logos/COL.png`} alt="" />
+            {data.currentTeam.name}
+          </div>
         </div>
       </div>
       <div className="divider" />

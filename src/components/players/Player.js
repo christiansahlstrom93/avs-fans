@@ -11,6 +11,8 @@ const Player = ({ player }) => {
   const onError = () => setHeadshot(HEADSHOT_DEFAULT)
 
   // const testimonial = testimonials[player.person.id]?.testimonial;
+
+  console.log(player)
   
   return (
     <div className="playerContainer" onClick={onNavigate}>
@@ -20,7 +22,8 @@ const Player = ({ player }) => {
       </div>
       <div>
         <div className="textContainer">
-          <div className="playerInfoShort">{`#${player.jerseyNumber} ${player.person.fullName} ${player.position.abbreviation}`}</div>
+          <div className="playerInfoShort">{`#${player.jerseyNumber} ${player.person.fullName}`}</div>
+          <div className="playerInfoShort-pos">{`${player.position.name}`}</div>
         </div>
   
         </div>
