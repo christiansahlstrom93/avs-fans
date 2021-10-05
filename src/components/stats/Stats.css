@@ -13,13 +13,14 @@ th {
   color: white;
   border: 1px solid #3a0313;
   text-align: left;
-  padding: 18px 12px;
+  padding: 12px 12px;
 }
 
 td {
   border: 1px solid #3a0313;
   text-align: left;
-  padding: 18px 12px;
+  padding: 16px 12px;
+  font-size: 14px;
 }
 
 tr:nth-child(even) {
@@ -28,7 +29,7 @@ tr:nth-child(even) {
 }
 
 .statsFilter {
-  padding: 8px 18px;
+  padding: 8px 6px;
   display: flex;
   flex-direction: row;
   overflow: auto;
