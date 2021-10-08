@@ -25,7 +25,7 @@ export const PlayersContextProvider = ({ children }) => {
     });
 
     try {
-      const response = await axios.get(`${BASE_API_URL}/teams/21/roster`);
+      const response = await axios.get(`${BASE_API_URL}/teams/21/roster?expand=roster.person`);
       setPlayersState({
         loading: false,
         error: null,

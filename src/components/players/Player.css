@@ -38,7 +38,8 @@
 }
 
 .playerInfoShort {
-  flex: 1;
+  display: flex;
+  align-items: center;
   padding: 4px 0;
   font-size: 12px;
   font-weight: bold;
@@ -48,6 +49,9 @@
 }
 
 .playerInfoShort-pos {
+  display: flex;
+  flex: 1;
+  align-items: flex-end;
   padding: 4px 0;
   font-size: 12px;
   font-style: italic;
@@ -59,6 +63,12 @@
 .pos {
   display: flex;
   font-size: 12px;
+}
+
+.country-logo-slim {
+  height: 12px;
+  width: 16px;
+  margin-left: 4px;
 }
 
 @media only screen and (max-width: 600px) {

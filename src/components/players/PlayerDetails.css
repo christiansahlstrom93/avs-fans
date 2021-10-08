@@ -41,9 +41,18 @@
 }
 
 .fullName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 18px;
   font-weight: bold;
   color: #262626;
+}
+
+.country-logo {
+  height: 14px;
+  width: 18px;
+  margin-left: 4px;
 }
 
 .subContent {

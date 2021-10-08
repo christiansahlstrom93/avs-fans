@@ -11,6 +11,7 @@ const Players = () => {
   const filteredPlayers = useMemo(() => {
     return data?.filter(player => player.jerseyNumber?.toLowerCase().includes(searchFilter) ||
         player.person.fullName.toLowerCase().includes(searchFilter) ||
+        player.person.birthCountry.toLowerCase().includes(searchFilter) ||
         player.position.abbreviation.toLowerCase().includes(searchFilter)
     )
   }, [searchFilter, data]) 
