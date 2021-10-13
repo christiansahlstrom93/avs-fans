@@ -12,8 +12,6 @@ const Player = ({ player }) => {
 
   // const testimonial = testimonials[player.person.id]?.testimonial;
 
-  console.log(player)
-
   const captainEl = useCallback(() => {
     if (player.person.captain) {
       return ' (C)';

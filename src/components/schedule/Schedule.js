@@ -1,10 +1,12 @@
-import { useContext, useEffect } from 'react';
+import { useCallback, useContext, useEffect, useState } from 'react';
 import { ScheduleContext } from '../../contexts/ScheduleContext';
 import Game from './Game';
 import './Schedule.css';
+import ScheduleHeader from './ScheduleHeader';
 
 const Schedule = () => {
   const [ { data, loading }, fetchSchedule ] = useContext(ScheduleContext);
+  const [ shouldFilter, setShouldFilter ] = useState(false);
 
   useEffect(() => {
     const startDate = new Date();
@@ -14,25 +16,41 @@ const Schedule = () => {
     fetchSchedule(startDate.toISOString().split('T')[0], endDate.toISOString().split('T')[0]);
   }, [fetchSchedule]);
 
+  const onFilter = useCallback(() => {
+    setShouldFilter(!shouldFilter);
+  }, [shouldFilter]);
+
   if (loading || !data) {
     return null;
   }
 
-  const firstLive = data.map(event => event.games
+  const filteredData = data.map(event => ({
+      ...event,
+      games: event.games.filter(game => shouldFilter ?
+        (game.teams.away.team.id === 21 || game.teams.home.team.id === 21) :
+        true
+      )
+    })
+  );
+    
+  const firstLive = filteredData.map(event => event.games
     .find(game => game.status.detailedState.toLowerCase() === 'scheduled'))
     .filter(foundGames => !!foundGames)[0];
 
   return (
-    <div className="schedule">
-      {data?.map((event, index) => {
-        return (
-          <div key={index} className="games-event">
-            {event.games.map((game, idx) => <Game shouldScroll={game.gamePk === firstLive.gamePk} game={game} key={idx} />
-            )}
-          </div>
-        );
-      })}
+    <>
+      <ScheduleHeader onFilter={onFilter} isActive={shouldFilter} />
+      <div className="schedule">
+        {filteredData?.map((event, index) => {
+          return (
+            <div key={index} className="games-event">
+              {event.games.map((game, idx) => <Game shouldScroll={game.gamePk === firstLive.gamePk} game={game} key={idx} />
+              )}
+            </div>
+          );
+        })}
     </div>
+    </>
   );
 };
 
