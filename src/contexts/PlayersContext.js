@@ -25,7 +25,7 @@ export const PlayersContextProvider = ({ children }) => {
     });
 
     try {
-      const response = await axios.get(`${BASE_API_URL}/teams/21/roster?expand=roster.person`);
+      const response = await axios.get(`${BASE_API_URL}/teams/21/roster?expand=roster.person.stats&stats=yearByYear,yearByYearPlayoffs,careerRegularSeason&expand=stats.team&site=en_nhlNR`);
       setPlayersState({
         loading: false,
         error: null,

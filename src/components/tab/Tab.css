@@ -2,23 +2,29 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 1;
   cursor: pointer;
   margin: 2px 2px;
   border: 1px solid #3a0313;
   padding: 8px;
   min-width: 108px;
+  min-height: 40px;
   font-size: 14px;
+  font-weight: bold;
 }
 
 .tabActive {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: bold;
+  flex: 1;
   cursor: pointer;
   margin: 2px 2px;
   border: 1px solid #3a0313;
   padding: 8px;
   min-width: 108px;
+  min-height: 40px;
   font-size: 14px;
   background-color: #8a2432;
   color: white;

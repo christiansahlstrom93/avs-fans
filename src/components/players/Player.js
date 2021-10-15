@@ -36,7 +36,6 @@ const Player = ({ player }) => {
           </div>
           <div className="playerInfoShort-pos">{`${player.position.name}`}</div>
         </div>
-  
         </div>
     </div>
     </div>
