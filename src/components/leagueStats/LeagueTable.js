@@ -7,7 +7,7 @@ const LeagueTable = ({ stats }) => {
           <tr>
             <th>{stats.division.name}</th>
             <th className="thCenter">GP</th>
-            <th className="thCenter">P</th>
+            <th className="thCenter" style={{ fontWeight: 'bold' }}>P</th>
             <th className="thCenter">W</th>
             <th className="thCenter">L</th>
             <th className="thCenter">OT</th>
@@ -24,7 +24,7 @@ const LeagueTable = ({ stats }) => {
                   </div>
                 </td>
                 <td className="tdCenter">{record.gamesPlayed}</td>
-                <td className="tdCenter">{record.points}</td>
+                <td className="tdCenter" style={{ fontWeight: 'bold' }}>{record.points}</td>
                 <td className="tdCenter">{record.leagueRecord.wins}</td>
                 <td className="tdCenter">{record.leagueRecord.losses}</td>
                 <td className="tdCenter">{record.leagueRecord.ot}</td>
