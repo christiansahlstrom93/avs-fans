@@ -27,6 +27,41 @@ input[type=text] {
   flex-wrap: wrap;
 }
 
+.topThreeContainer {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 16px 0;
+}
+
+.topThreeHeadline {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.topThreeLogoWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 16px 8px;
+}
+
+.topThreeInfo {
+  display: flex;
+  flex: 0;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.topThreeText {
+  padding: 8px 12px;
+  font-size: 12px;
+}
 
 @media only screen and (max-width: 600px) {
   input[type=text] {

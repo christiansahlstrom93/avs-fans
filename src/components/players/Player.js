@@ -4,11 +4,11 @@ import {BASE_HEADSHOT_URL, HEADSHOT_DEFAULT} from '../../contants'
 import { useHistory } from 'react-router-dom';
 import './Player.css';
 
-const Player = ({ player }) => {
+const Player = ({ player, stats }) => {
   const history = useHistory();
   const onNavigate = () => history.push(`/player/${player.person.id}`);
   const [headshot, setHeadshot] = useState(`${BASE_HEADSHOT_URL}${player.person.id}.jpg`);
-  const onError = () => setHeadshot(HEADSHOT_DEFAULT)
+  const onError = () => setHeadshot(HEADSHOT_DEFAULT);
 
   // const testimonial = testimonials[player.person.id]?.testimonial;
 
@@ -20,6 +20,20 @@ const Player = ({ player }) => {
     }
     return null;
   }, [player]);
+
+  const getStatsEl = useCallback(() => {
+    if (!stats) {
+      return null;
+    }
+    return (
+      <>
+        <div className="bold">P: {stats.p}</div>
+        <div>G: {stats.g}</div>
+        <div>A: {stats.a}</div>
+        <div>GP: {stats.games}</div>
+      </>
+    );
+  }, [stats]);
   
   return (
     <div className="playerContainer" onClick={onNavigate}>
@@ -33,6 +47,9 @@ const Player = ({ player }) => {
             {`#${player.jerseyNumber} ${player.person.fullName}`}
             {captainEl()}
             <img className="country-logo-slim" src={`/country/${player.person.birthCountry}.png`} alt="" />
+          </div>
+          <div className="statsContainer">
+            {getStatsEl()}
           </div>
           <div className="playerInfoShort-pos">{`${player.position.name}`}</div>
         </div>

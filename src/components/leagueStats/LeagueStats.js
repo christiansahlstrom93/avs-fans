@@ -13,7 +13,7 @@ const LeageuStats = () => {
   }, [fetchLeagueStats, data, loading]);
 
   if (loading) {
-    return <div>Loading stats...</div>
+    return null;
   }
 
   if (!data) {

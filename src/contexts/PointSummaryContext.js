@@ -5,6 +5,15 @@ import { createContext, useCallback, useReducer } from "react";
 import basedata from './basedata'
 
 export const PointSummaryContext = createContext([basedata, () => '']);
+const SEASON = '20212022';
+
+const basePointsData = {
+  playerId: null,
+  g: 0,
+  a: 0,
+  p: 0,
+  games: 0,
+};
 
 export const PointSummaryContextProvider = ({ children }) => {
   const reducer = (prevState, updatedProperty) => ({
@@ -19,18 +28,46 @@ export const PointSummaryContextProvider = ({ children }) => {
     data: null,
   });
 
-  const fetchPointSummary = useCallback(async () => {
+  const fetchPointSummary = useCallback(async (ids) => {
+    if (!ids || !ids.length) {
+      return;
+    }
     setPointSummary({
       loading: true,
       error: null,
     });
 
+    const promises = [];
+    ids.forEach(id => {
+      promises.push(axios.get(`https://statsapi.web.nhl.com/api/v1/people/${id}?expand=person.stats&stats=yearByYear`))
+    });
+    const response = await Promise.all(promises);
+
+    const getStatsForSeason = (playerId, splits) => {
+      if (!splits || !splits.length) {
+        return { ...basePointsData, playerId };
+      }
+      const seasonSplit = splits.find(split => split.season === SEASON);
+      if (seasonSplit) {
+        const { stat } = seasonSplit;
+        return {
+          g: stat.goals ?? 0,
+          a: stat.assists ?? 0,
+          p: stat.points ?? 0,
+          games: stat.games ?? 0,
+          playerId
+        }
+      }
+      return { ...basePointsData, playerId };
+    };
+
+    const getFormattedData = () => response.map(playerData => getStatsForSeason(playerData.data.people[0].id, playerData.data.people[0].stats[0].splits));
+
     try {
-      const response = await axios.get('https://api.nhle.com/stats/rest/sv/skater/summary?isAggregate=false&isGame=false&sort=%5B%7B%22property%22:%22assists%22,%22direction%22:%22DESC%22%7D,%7B%22property%22:%22points%22,%22direction%22:%22DESC%22%7D,%7B%22property%22:%22gamesPlayed%22,%22direction%22:%22ASC%22%7D,%7B%22property%22:%22playerId%22,%22direction%22:%22ASC%22%7D%5D&start=0&limit=50&factCayenneExp=gamesPlayed%3E=1&cayenneExp=franchiseId%3D27%20and%20gameTypeId=2%20and%20seasonId%3C=20212022%20and%20seasonId%3E=20212022');
       setPointSummary({
         loading: false,
         error: null,
-        data: response.data.dates,
+        data: getFormattedData(),
       });
     } catch (err) {
       setPointSummary({
