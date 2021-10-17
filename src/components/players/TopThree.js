@@ -5,13 +5,13 @@ const TopThree = ({ roster, stats }) => {
     return null;
   }
 
-  const sortedStats = stats.sort((a, b) => a.p > b.p ? -1 : 1);
+  stats.sort((a, b) => a.p > b.p ? -1 : 1);
 
-  if (sortedStats.length < 3) {
+  if (stats.length < 3) {
     return null;
   }
 
-  const topThree = [ sortedStats[0], sortedStats[1], sortedStats[2] ];
+  const topThree = [ stats[0], stats[1], stats[2] ];
 
   return (
     <div className="topThreeContainer">

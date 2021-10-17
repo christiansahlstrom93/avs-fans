@@ -3,6 +3,8 @@ import { LeagueStatsContext } from "../../contexts/LeagueStatsContext";
 import LeagueTable from "./LeagueTable";
 import './LeagueStats.css';
 
+const PREFERRED_DIVISION = 'Central';
+
 const LeageuStats = () => {
   const [ { data, loading }, fetchLeagueStats ] = useContext(LeagueStatsContext);
 
@@ -19,6 +21,8 @@ const LeageuStats = () => {
   if (!data) {
     return null;
   }
+
+  data.sort((a, b) => a.division.name === PREFERRED_DIVISION ? -1 : 1);
 
   return (
     <div className="leagueStatsPage">
