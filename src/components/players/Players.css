@@ -1,0 +1,95 @@
+.playersPage {
+  padding: 12px 8px;
+}
+
+.playersbanner {
+  width: 100%;
+  height: 500px;
+}
+
+input[type=text] {
+  width: 436px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: white;
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 12px;
+  margin-left: 12px;
+  transition: width 0.4s ease-in-out;
+}
+
+.container {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.topThreeContainer {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 16px 0;
+}
+
+.topThreeHeadline {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.topThreeLogoWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 16px 8px;
+}
+
+.topThreeInfo {
+  display: flex;
+  flex: 0;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+.topThreeText {
+  padding: 8px 12px;
+  font-size: 12px;
+}
+
+@media only screen and (max-width: 600px) {
+  input[type=text] {
+    width: calc(100% - 12px);
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: white;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 12px;
+    margin-left: 4px;
+    margin-bottom: 18px;
+    transition: width 0.4s ease-in-out;
+  }
+
+  .playerContainer {
+    width: 100%;
+  }
+
+  input[type=text]:focus {
+    width: calc(100% - 24px);
+  }
+
+  .playersbanner {
+    width: 100%;
+    height: 200px;
+  }
+}

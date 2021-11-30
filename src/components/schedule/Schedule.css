@@ -1,0 +1,56 @@
+.schedule {
+  display: flex;
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.games-event {
+  display: flex;
+  height: 120px;
+}
+
+.dateContainer {
+  background-color: #CCC;
+  color: black;
+}
+
+.scheduleHeader {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+}
+
+.scheduleHeader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  border: 1px solid #DDD;
+  border-radius: 4px;
+  padding: 4px;
+  margin-left: 4px;
+  min-width: 64px;
+  cursor: pointer;
+}
+
+.scheduleHeader-container-active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  border: 1px solid #3a0313;
+  border-radius: 4px;
+  padding: 4px;
+  margin-left: 4px;
+  min-width: 64px;
+  background-color: #8a2432;
+  cursor: pointer;
+}
+
+.scheduleCheckbox {
+  height: 16px;
+  width: 16px;
+  border: none;
+}

@@ -1,0 +1,36 @@
+.tableContainer {
+  padding: 12px 8px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  background-color: black;
+  color: white;
+  border: 1px solid #3a0313;
+  text-align: left;
+  padding: 12px 12px;
+}
+
+td {
+  border: 1px solid #3a0313;
+  text-align: left;
+  padding: 16px 12px;
+  font-size: 14px;
+}
+
+tr:nth-child(even) {
+  background-color: #8a2432;
+  color: white;
+}
+
+.statsFilter {
+  padding: 8px 6px;
+  display: flex;
+  flex-direction: row;
+  overflow: auto;
+}

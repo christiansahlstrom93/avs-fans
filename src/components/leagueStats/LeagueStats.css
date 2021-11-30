@@ -1,0 +1,29 @@
+.leagueStatsPage {
+  padding: 0 4px 8px;
+}
+
+.leagueTableContainer {
+  padding: 8px 4px;
+  font-size: 14px;
+}
+
+.leagueTableTeamCell {
+  display: flex;
+  align-items: center;
+}
+
+.leagueTableTeamCell > img,p {
+  margin-left: 2px;
+}
+
+.tdCenter {
+  text-align: center;
+}
+
+.thCenter {
+  text-align: center;
+}
+
+.leagueTableTr > td {
+  padding: 2px 4px;
+}

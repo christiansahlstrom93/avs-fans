@@ -1,0 +1,54 @@
+.simulation {
+  display: flex;
+  justify-content: center;
+  min-height: 150px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.simTeams {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.simTeam {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex: 1;
+  padding: 8px 8px;
+  font-size: 13px;
+}
+
+.simTeam:first-of-type {
+  border-right: 1px solid #EEE;
+}
+
+.simTeamNameContainer {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  padding-bottom: 8px;
+  font-weight: bold;
+}
+
+.simTeamName {
+  padding-right: 4px;
+}
+
+.simInfoText {
+  font-weight: bold;
+}
+
+.simScore {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 16px;
+}
