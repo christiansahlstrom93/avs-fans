@@ -1,6 +1,6 @@
 import axios from "axios";
 import { createContext, useCallback, useReducer } from "react";
-import {BASE_API_URL} from '../contants'
+import {BASE_API_URL, TEAM_ID} from '../contants'
 import basedata from './basedata'
 
 export const PlayersContext = createContext([basedata, () => '']);
@@ -25,7 +25,7 @@ export const PlayersContextProvider = ({ children }) => {
     });
 
     try {
-      const response = await axios.get(`${BASE_API_URL}/teams/21/roster?expand=roster.person`);
+      const response = await axios.get(`${BASE_API_URL}/teams/${TEAM_ID}/roster?expand=roster.person`);
       setPlayersState({
         loading: false,
         error: null,

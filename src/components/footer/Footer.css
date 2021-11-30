@@ -1,5 +1,13 @@
 .footer {
-  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
   width: 100%;
   background-color: #CCC;
+}
+
+.footerLogo {
+  height: 80px;
+  width: 80px;
 }

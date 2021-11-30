@@ -1,8 +1,15 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useContext } from 'react';
+import { SimulationContext } from '../../contexts/SimulationContext';
 import './Game.css';
 
 const Game = ({ game, shouldScroll }) => {
   const ref = useRef(null);
+  const [ , fetchSimulation ] = useContext(SimulationContext);
+  const homeTeam = game.teams.home.team;
+  const awayTeam = game.teams.away.team;
+  const onSimulate = () => {
+    fetchSimulation(homeTeam, awayTeam);
+  };
   const summary = () => {
     if (!game?.seriesSummary?.seriesStatusShort) {
       return null;
@@ -32,8 +39,8 @@ const Game = ({ game, shouldScroll }) => {
       <div className="gameWrapper">
         <div className="gameBox">
           <div className="teamSection">
-            <img className="team-logo" src={`/team-logos/${game.teams.away.team.abbreviation}.png`} alt="" />
-            <div className="teamName">{game.teams.away.team.abbreviation}</div>
+            <img className="team-logo" src={`/team-logos/${awayTeam.abbreviation}.png`} alt="" />
+            <div className="teamName">{awayTeam.abbreviation}</div>
             {game.status.detailedState.toLowerCase() === 'final' ? (
               <div>{game.teams.away.score}</div>
             ) : 
@@ -41,8 +48,8 @@ const Game = ({ game, shouldScroll }) => {
           }
           </div>
             <div className="teamSection">
-              <img className="team-logo" src={`/team-logos/${game.teams.home.team.abbreviation}.png`} alt="" />
-              <div className="teamName">{game.teams.home.team.abbreviation}</div>
+              <img className="team-logo" src={`/team-logos/${homeTeam.abbreviation}.png`} alt="" />
+              <div className="teamName">{homeTeam.abbreviation}</div>
               {game.status.detailedState.toLowerCase() === 'final' ? (
                 <div>{game.teams.home.score}</div>
               ) : 
@@ -55,6 +62,9 @@ const Game = ({ game, shouldScroll }) => {
           {new Date(game.gameDate).toLocaleString() }
         </div>
       </div>
+      {game.status.detailedState.toLowerCase() === 'scheduled' ? (
+        <button className="simulateButton" onClick={onSimulate}>Simulate</button>
+      ) : ''}
     </div>
     </>
   );
