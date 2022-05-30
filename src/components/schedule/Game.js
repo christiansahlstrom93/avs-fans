@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useContext } from 'react';
+import { format } from 'date-fns';
 import { SimulationContext } from '../../contexts/SimulationContext';
 import './Game.css';
 
@@ -59,7 +60,7 @@ const Game = ({ game, shouldScroll }) => {
         </div>
       <div className="gameBox">
         <div className="gameDate">
-          {new Date(game.gameDate).toLocaleString() }
+          {format(new Date(game.gameDate), 'yyyy-MM-dd hh:mm')}
         </div>
       </div>
       {game.status.detailedState.toLowerCase() === 'scheduled' ? (
