@@ -11,7 +11,7 @@ const STATS_TAB = 1;
 const LATEST_TAB = 2;
 
 const Homepage = () => {
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState(LATEST_TAB);
   const [config] = useContext(ConfigContext);
   const getContent = useCallback(() => {
     if (activeTab === PLAYERS_TAB) {
@@ -31,6 +31,12 @@ const Homepage = () => {
       <img className="playersbanner" src={config.banner} alt="" />
       <div className="tabs">
         <Tab
+          isActive={activeTab === LATEST_TAB}
+          name="Latest news"
+          id={LATEST_TAB}
+          onClick={onTabClick}
+        />
+        <Tab
           isActive={activeTab === PLAYERS_TAB}
           name="Roster"
           id={PLAYERS_TAB}
@@ -40,12 +46,6 @@ const Homepage = () => {
           isActive={activeTab === STATS_TAB}
           name="Stats"
           id={STATS_TAB}
-          onClick={onTabClick}
-        />
-        <Tab
-          isActive={activeTab === LATEST_TAB}
-          name="Latest news"
-          id={LATEST_TAB}
           onClick={onTabClick}
         />
       </div>

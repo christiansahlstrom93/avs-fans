@@ -1,3 +1,21 @@
 .latest {
-    padding: 8px;
+  padding: 8px 8px 24px 8px;
+}
+
+.article {
+  border-bottom: 1px solid #eee;
+  padding: 8px 0;
+}
+
+.headline {
+
+}
+
+.title {
+  padding: 4px 0;
+  color: #666666;
+}
+
+.video {
+  padding: 18px 0;
 }
