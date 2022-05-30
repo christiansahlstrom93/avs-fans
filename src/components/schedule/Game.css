@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   border-right: 1px solid #EEE;
-  padding: 12px;
+  padding: 12px 12px 6px 12px;
   width: 150px;
 }
 
@@ -51,7 +51,7 @@
   align-items: center;
   justify-content: space-around;
   width: 100%;
-  padding: 2px 0;
+  padding: 4px 0;
   font-size: 12px;
   font-weight: bold;
 }
@@ -74,14 +74,15 @@
 }
 
 .simulateButton {
-  background-color: #e7e7e7;
+  background-color: transparent;
   border: none;
+  font-weight: bold;
   color: black;
   padding: 8px 12px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 12px;
-  margin: 8px 2px 0 2px;
+  font-size: 14px;
+  margin: 6px 2px 0 2px;
   cursor: pointer;
 }
