@@ -15,3 +15,4 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "avs-stats" #Must be unique in Heroku
           heroku_email: "christian.sahlstrom@yahoo.com"
+          heroku_email: "christian.sahlstrom@yahoo.com"

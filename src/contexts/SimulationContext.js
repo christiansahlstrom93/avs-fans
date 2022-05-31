@@ -95,8 +95,16 @@ export const SimulationContextProvider = ({ children }) => {
     }
   }, []);
 
+  const clear = useCallback(() => {
+    setSimulationState({
+      loading: false,
+      error: null,
+      data: null
+    })
+  }, []);
+
   return (
-    <SimulationContext.Provider value={[simulationState, fetchSimulation]}>
+    <SimulationContext.Provider value={[simulationState, fetchSimulation, clear]}>
       {children}
     </SimulationContext.Provider>
   );
