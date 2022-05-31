@@ -3,12 +3,17 @@
 }
 
 .article {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #ccc;
   padding: 8px 0;
 }
 
 .headline {
 
+}
+
+.text {
+  font-size: 14px;
+  white-space: pre-line;
 }
 
 .title {
@@ -18,4 +23,13 @@
 
 .video {
   padding: 18px 0;
+}
+
+.img-container {
+  display: flex;
+  margin: 12px 0;
+}
+
+.article-img {
+  width: 100%;
 }
