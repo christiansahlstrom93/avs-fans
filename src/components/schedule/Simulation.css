@@ -1,14 +1,71 @@
 .simulation {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   min-height: 150px;
 }
 
-.loading {
+.closeBar {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  padding: 12px;
 }
+
+.closeImg {
+  height: 24px;
+  width: 24px;
+}
+
+.loadingSim {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 150px;
+  padding: 0 8px;
+}
+
+.loadingText {
+  padding: 8px;
+}
+
+.circle {
+  display: inline-block;
+  margin-top: 8px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: whiteSmoke;
+  box-shadow: 4px -40px 60px 5px rgb(26, 117, 206) inset;
+}
+
+.loader {
+  background: linear-gradient(to right, rgb(22, 113, 202) 50%, transparent 50%);
+  animation: spin 1s infinite linear;
+}
+
+.loader:before {
+  display: block;
+  content: '';
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  background: #FFF;
+  border-radius: 50%;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.no-games {
+  display: flex;
+  padding: 12px;
+  justify-content: center;
+}
+
 
 .simTeams {
   display: flex;
@@ -26,7 +83,7 @@
 }
 
 .simTeam:first-of-type {
-  border-right: 1px solid #EEE;
+  border-right: 1px solid #eee;
 }
 
 .simTeamNameContainer {

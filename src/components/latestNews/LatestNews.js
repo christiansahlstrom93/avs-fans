@@ -18,6 +18,14 @@ const LatestNews = () => {
     );
   };
 
+  const renderImg = (src) => {
+    return (
+      <div className="img-container">
+        <img className="article-img" src={src} />
+      </div>
+    );
+  };
+
   const renderArticales = () => {
     return Articales.map((article) => {
       return (
@@ -26,6 +34,7 @@ const LatestNews = () => {
           <h4 className="title">{article.title}</h4>
           <span className="text">{article.text}</span>
           {article.videoLink ? renderVideo(article.videoLink) : null}
+          {article.imgSrc ? renderImg(article.imgSrc) : null}
         </div>
       );
     });
