@@ -31,10 +31,16 @@ const LatestNews = () => {
     });
   };
 
+  // <h2>Latest news</h2>
   return (
     <div className="latest">
-      <h2>Latest news</h2>
-      {renderArticales()}
+      <iframe
+        id="frame"
+        width="100%"
+        height="800px"
+        src="https://www.nhl.com/avalanche/news/"
+        style={{marginTop: '200px;'}}
+      ></iframe>
     </div>
   );
 };
