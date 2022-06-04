@@ -39,7 +39,6 @@ const LatestNews = () => {
         width="100%"
         height="800px"
         src="https://www.nhl.com/avalanche/news/"
-        style={{marginTop: '200px;'}}
       ></iframe>
     </div>
   );
