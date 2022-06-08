@@ -15,6 +15,7 @@ import { ConfigContextProvider } from "./contexts/ConfigContext";
 import { SimulationContextProvider } from "./contexts/SimulationContext";
 import Simulation from "./components/schedule/Simulation";
 import "./App.css";
+import { NewsContextProvider } from "./contexts/newsContext";
 
 const App = () => {
   const isMobile = () => window.innerWidth <= 800;
@@ -38,6 +39,7 @@ const App = () => {
             <PlayerDetailsContextProvider>
               <ScheduleContextProvider>
                 <LeagueStatsContextProvider>
+                  <NewsContextProvider>
                   <Header />
                   <Schedule />
                   <Simulation />
@@ -52,6 +54,7 @@ const App = () => {
                     </Switch>
                   </BrowserRouter>
                   <Footer />
+                  </NewsContextProvider>
                 </LeagueStatsContextProvider>
               </ScheduleContextProvider>
             </PlayerDetailsContextProvider>

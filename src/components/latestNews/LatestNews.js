@@ -1,24 +1,30 @@
-import Articales from "../../latestNews";
+import { useEffect, useContext } from "react";
+import { NewsContext } from "../../contexts/newsContext";
+
 import "./LatestNews.css";
 
 const LatestNews = () => {
-  const renderVideo = (link) => {
+  const [{ data, loading }, fetchNews] = useContext(NewsContext);
+
+  useEffect(() => {
+    fetchNews();
+  }, []);
+
+  if (loading) {
     return (
-      <div className="video">
-        <iframe
-          width="100%"
-          height="315"
-          src={link}
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
+      <div className="loadingSim">
+        <div className="loader circle" />
+        <div className="loadingText">Loadig news...</div>
       </div>
     );
-  };
+  }
+
+  if (!data || !data.length) {
+    return <div className="no-news">No news...</div>;
+  }
 
   const renderImg = (src) => {
+    if (!src) return null;
     return (
       <div className="img-container">
         <img className="article-img" src={src} />
@@ -26,29 +32,24 @@ const LatestNews = () => {
     );
   };
 
-  const renderArticales = () => {
-    return Articales.map((article) => {
+  const renderArticles = () => {
+    return data.map((article, i) => {
       return (
-        <div className="article">
-          <h3 className="headline">{article.headline}</h3>
-          <h4 className="title">{article.title}</h4>
-          <span className="text">{article.text}</span>
-          {article.videoLink ? renderVideo(article.videoLink) : null}
-          {article.imgSrc ? renderImg(article.imgSrc) : null}
+        <div key={i} className="article">
+          <h3>{article.headline}</h3>
+          <h4>{article.subHeader}</h4>
+          {renderImg(article.imgSrc)}
+          <div dangerouslySetInnerHTML={{ __html: article.preview }} />
+          <div dangerouslySetInnerHTML={{ __html: article.body }} />
         </div>
       );
     });
   };
 
-  // <h2>Latest news</h2>
   return (
     <div className="latest">
-      <iframe
-        id="frame"
-        width="100%"
-        height="800px"
-        src="https://www.nhl.com/avalanche/news/"
-      ></iframe>
+      <h2>Latest news</h2>
+      {renderArticles()}
     </div>
   );
 };
