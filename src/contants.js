@@ -5,3 +5,4 @@ export const CURRENT_SEASON = '20202021';
 export const HEADSHOT_DEFAULT = 'https://cms.nhl.bamgrid.com/images/headshots/current/168x168/skater@2x.jpg';
 export const JUMBOTRON_DEFAULT = 'https://cms.nhl.bamgrid.com/images/arena/default/21.jpg';
 export const TEAM_ID = process.env.REACT_APP_TEAM_ID;
+export const SCRAPER_API_URL = "https://avs-scraper.herokuapp.com";
