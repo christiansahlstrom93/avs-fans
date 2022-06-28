@@ -11,7 +11,7 @@ const Config = {
       logo: 'https://www-league.nhlstatic.com/images/logos/teams-current-primary-light/21.svg',
       color: '#98012e',
     },
-    banner: 'https://www.pixelstalk.net/wp-content/uploads/2016/10/Colorado-Avalanche-Backgrounds-Free-Download.jpg',
+    banner: 'https://pbs.twimg.com/profile_banners/26577824/1656298556/1500x500',
     scheduleFilter: {},
     footer: {
       logo: 'https://www-league.nhlstatic.com/images/logos/league-dark/133-flat.svg',

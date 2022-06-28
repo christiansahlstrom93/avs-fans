@@ -44,7 +44,7 @@ const Schedule = () => {
         {filteredData?.map((event, index) => {
           return (
             <div key={index} className="games-event">
-              {event.games.map((game, idx) => <Game shouldScroll={game.gamePk === firstLive.gamePk} game={game} key={idx} />
+              {event.games.map((game, idx) => <Game shouldScroll={game.gamePk === firstLive?.gamePk} game={game} key={idx} />
               )}
             </div>
           );
