@@ -37,6 +37,10 @@ const Schedule = () => {
     .find(game => game.status.detailedState.toLowerCase() === 'scheduled'))
     .filter(foundGames => !!foundGames)[0];
 
+  if (!filteredData.length) {
+    return null;
+  }
+
   return (
     <>
       <ScheduleHeader onFilter={onFilter} isActive={shouldFilter} />
