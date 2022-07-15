@@ -11,7 +11,7 @@ const TopThree = ({ roster, stats }) => {
 
   stats.sort((a, b) => a.p > b.p ? -1 : 1);
 
-  if (stats.length < 3) {
+  if (stats.length < 3 || stats[0].p < 1) {
     return null;
   }
 

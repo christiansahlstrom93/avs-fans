@@ -29,8 +29,6 @@ const PlayerDetails = () => {
     return null;
   }
 
-  console.log(data)
-
   return (
     <div className="playerDetailsContainer">
       <div className="imageContainer">

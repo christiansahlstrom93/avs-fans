@@ -3,9 +3,9 @@
 import axios from "axios";
 import { createContext, useCallback, useReducer } from "react";
 import basedata from './basedata'
+import { CURRENT_SEASON } from "../contants";
 
 export const PointSummaryContext = createContext([basedata, () => '']);
-const SEASON = '20212022';
 
 const basePointsData = {
   playerId: null,
@@ -47,7 +47,7 @@ export const PointSummaryContextProvider = ({ children }) => {
       if (!splits || !splits.length) {
         return { ...basePointsData, playerId };
       }
-      const seasonSplit = splits.find(split => split.season === SEASON);
+      const seasonSplit = splits.find(split => split.season === CURRENT_SEASON);
       if (seasonSplit) {
         const { stat } = seasonSplit;
         return {

@@ -7,7 +7,7 @@ const Header = () => {
 
   return (
     <div className="header" style={{ backgroundColor: config.header.color }}>
-      <a href="/">
+      <a className="avs-logo" href="/">
         <img className="logo" src={config.header.logo} alt='logo' />
       </a>
       <a className="link" href="/" >Colorado Avalanche</a>
